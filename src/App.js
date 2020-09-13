@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Row from './component/Row/Row';
 import Banner from './component/Banner/Banner';
 import Nav from './component/Nav/Nav'
 import requests from './Request';
+import ReactGa from 'react-ga';
 
 function App() {
+
+  useEffect(() => {
+    ReactGa.initialize('UA-161261812-2')
+    ReactGa.pageview('/')
+  }, [])
+
   return (
     <div className="app">
       <Nav />

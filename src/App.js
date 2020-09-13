@@ -17,6 +17,7 @@ function App() {
       }}>
         <strong>Notice: </strong>Still work in progress.
         The functionality will be added every day so come and visit please.
+        Open this website either on laptop or Desktop for the better view.
       </div>
       <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />

@@ -8,9 +8,16 @@ import requests from './Request';
 function App() {
   return (
     <div className="app">
-      {/* Nav */}
       <Nav />
       <Banner />
+      <div style={{
+        color: "white",
+        padding: "20px",
+        backgroundColor: "rgba(51,51,51,0.2)"
+      }}>
+        <strong>Notice: </strong>Still work in progress.
+        The functionality will be added every day so come and visit please.
+      </div>
       <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />

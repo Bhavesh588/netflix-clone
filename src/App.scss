@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+}
+
+.app {
+  background-color: #111;
+
+  h2 {
+    display: block;
+    font-size: 1.5vw;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0 4% .5em 4%;
+    font-weight: bold;
+    color: white;
+    @media only screen and (max-width: 800px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.app__row {
+  position: relative;
+  top: 0;
+  z-index: 1;
+  /* margin-left: 50px; */
+  // margin-top: -250px;
+} 

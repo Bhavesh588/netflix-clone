@@ -15,7 +15,12 @@ class App extends Component {
     this.state = {
       Original: [],
       Trending:[],
-      TopRated: []
+      TopRated: [],
+      ActionMovies: [],
+      ComedyMovies: [],
+      HorrorMovies: [],
+      RomanceMovies: [],
+      Documentaries: []
     };
   }
 
@@ -23,24 +28,29 @@ class App extends Component {
     const fetchUrl = {
       Original: requests.fetchNetflixOriginals,
       Trending: requests.fetchTrending,
-      TopRated: requests.fetchTopRated
+      TopRated: requests.fetchTopRated,
+      ActionMovies: requests.fetchActionMovies,
+      ComedyMovies: requests.fetchComedyMovies,
+      HorrorMovies: requests.fetchHorrotMovies,
+      RomanceMovies: requests.fetchRomanceMovies,
+      Documentaries: requests.fetchDocumentaries
     }
 
     for(let key in fetchUrl) {
       await axios.get(fetchUrl[key])
       .then(res => 
         this.setState({ [key]: res.data.results })
-      )
+        )
     }
   }
-
+  
   // useEffect(() => {
   //   ReactGa.initialize('UA-161261812-2')
   //   ReactGa.pageview('/')
   // }, [])
 
   render() {
-    const { Original, Trending, TopRated } = this.state
+    const { Original, Trending, TopRated, ActionMovies, ComedyMovies, HorrorMovies, RomanceMovies, Documentaries } = this.state
     return (
       <div className="app">
         <Nav />
@@ -64,15 +74,37 @@ class App extends Component {
             ? <Slider title="TopRated" movies={TopRated} />
             : null
           }
+          <h2>Action Movies</h2>
+          {
+            ActionMovies !== []
+            ? <Slider title="TopRated" movies={ActionMovies} />
+            : null
+          }
+          <h2>Comedy Movies</h2>
+          {
+            ComedyMovies !== []
+            ? <Slider title="TopRated" movies={ComedyMovies} />
+            : null
+          }
+          <h2>Horror Movies</h2>
+          {
+            HorrorMovies !== []
+            ? <Slider title="TopRated" movies={HorrorMovies} />
+            : null
+          }
+          <h2>Romance Movies</h2>
+          {
+            RomanceMovies !== []
+            ? <Slider title="TopRated" movies={RomanceMovies} />
+            : null
+          }
+          <h2>Documentaries</h2>
+          {
+            Documentaries !== []
+            ? <Slider title="TopRated" movies={Documentaries} />
+            : null
+          }
         </div>
-          {/* <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
-          <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-          <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-          <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-          <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-          <Row title="Horror Movies" fetchUrl={requests.fetchHorrotMovies} />
-          <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-          <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} /> */}
         <div style={{
           color: "white",
           padding: "20px",

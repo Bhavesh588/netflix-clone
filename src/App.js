@@ -30,8 +30,8 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    // ReactGa.initialize('UA-161261812-2')
-    // ReactGa.pageview('/')
+    ReactGa.initialize('UA-161261812-2')
+    ReactGa.pageview('/')
 
     // axios.get('/movies')
     // .then(res => this.setState({ Original: res.data }))

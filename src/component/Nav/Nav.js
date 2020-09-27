@@ -15,6 +15,17 @@ function Nav() {
         }
     },[])
 
+    var alert = document.getElementsByClassName("alert")[0]
+    var nav = document.getElementsByClassName("nav")[0]
+    if(alert !== undefined) {
+        var height = alert.clientHeight
+        if(window.pageYOffset > height) {
+            nav.classList.add("fixed")
+        }
+    } else if(nav !== undefined ) {
+        nav.classList.add("fixed")
+    }
+
     return (
         <div className={`nav ${show && "nav__black"}`}>
             <img className="nav__logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2000px-Netflix_2015_logo.svg.png" alt="Netflix Logo" />

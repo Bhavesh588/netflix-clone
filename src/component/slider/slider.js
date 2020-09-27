@@ -99,6 +99,7 @@ export class slider extends Component {
       for (let index of combinedIndex) {
         sliderContents.push(
           <SliderItem
+            id = {index}
             movie={movies[index]}
             key={`${movies[index].id}-${index}`}
             width={100 / itemsInRow}

@@ -3,7 +3,8 @@
 }
 
 .app {
-  background-color: #111;
+  background-color: rgb(20,20,20);
+  overflow: hidden;
 
   h2 {
     display: block;
@@ -19,6 +20,31 @@
       font-size: 12px;
     }
   }
+}
+
+.alert {
+  display: inherit;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.displaynone {
+  display: none;
+}
+
+.closebtn {
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }
 
 .app__row {

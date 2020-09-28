@@ -30,8 +30,8 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    ReactGa.initialize('UA-161261812-2')
-    ReactGa.pageview('/')
+    // ReactGa.initialize('UA-161261812-2')
+    // ReactGa.pageview('/')
 
     // axios.get('/movies')
     // .then(res => this.setState({ Original: res.data }))
@@ -153,7 +153,7 @@ class App extends Component {
           <span className="closebtn" onClick={() => alert.classList.add('displaynone')}>&times;</span> 
           <strong>Notice</strong> Still work in progress. Please view the Website 
           in Desktop. I have created the backend but the data is not from my Database. 
-          It is from tmdb. I will be delpoying clone backend soon.
+          It is from tmdb. I will be delpoying clone backend soon. And Try Hovering over the movies
         </div>
         <Nav />
         <Banner />
